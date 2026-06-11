@@ -1,0 +1,9 @@
+material_code,display_name,commodity_family,lme_code,price_feed_key,unit
+AL6061,Aluminium 6061-T6,Aluminium,LME_AL,al6061_spot,USD/kg
+AL7075,Aluminium 7075-T6,Aluminium,LME_AL,al7075_spot,USD/kg
+SS304,Stainless Steel 304,Steel,LME_NI,ss304_spot,USD/kg
+SS316L,Stainless Steel 316L,Steel,LME_NI,ss316l_spot,USD/kg
+TI6AL4V,Titanium Ti-6Al-4V,Titanium,TI_FUTURES,ti6al4v_spot,USD/kg
+PEEK,PEEK Polymer,Polymer,PLATTS_PEEK,peek_spot,USD/kg
+ABS,ABS Plastic,Polymer,PLATTS_ABS,abs_spot,USD/kg
+PLA,PLA Biopolymer,Polymer,PLATTS_PLA,pla_spot,USD/kg

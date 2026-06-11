@@ -1,0 +1,20 @@
+# deploy/docker-compose.yml
+version: '3.8'
+
+services:
+  recommender-api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - CLASSIFIER_MODEL_PATH=/app/models/classifier_v2.pkl
+      - COST_MODELS_DIR=/app/models/cost_v2/
+      - LOG_LEVEL=WARNING
+      - MODEL_VERSION_TAG=classifier_v2_cost_v2
+    volumes:
+      # Mount model artifacts in production container
+      - ../../cad-process-recommender/outputs:/app/models
+      - ../../matterize-cost-model/outputs/models:/app/models/cost_v2
+    restart: unless-stopped

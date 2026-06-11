@@ -1,0 +1,20 @@
+{
+  "cnc_milling": 0,
+  "cnc_turning": 1,
+  "sheet_metal_bending": 2,
+  "sheet_metal_stamping": 3,
+  "injection_molding": 4,
+  "die_casting": 5,
+  "sand_casting": 6,
+  "investment_casting": 7,
+  "additive_fdm": 8,
+  "additive_slm": 9,
+  "laser_cutting": 10,
+  "forging": 11,
+  "extrusion": 12,
+  "5axis_cnc": 13,
+  "turning_milling": 14,
+  "edm": 15,
+  "vacuum_forming": 16,
+  "powder_coating": 17
+}

@@ -1,0 +1,11 @@
+{
+  "1": {
+    "version": 1,
+    "file_path": "data/processed\\training_data_v1.csv",
+    "row_count": 100,
+    "column_count": 41,
+    "validation_pass_rate": 100.0,
+    "registered_at": "2026-06-11T09:30:04.830771Z"
+  },
+  "latest_version": 1
+}

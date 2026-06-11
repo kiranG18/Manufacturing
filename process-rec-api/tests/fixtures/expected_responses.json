@@ -1,0 +1,10 @@
+[
+  {
+    "part_id": "PART-SAMPLE-001",
+    "expected_top_process": "cnc_milling"
+  },
+  {
+    "part_id": "PART-SAMPLE-002",
+    "expected_top_process": "additive_slm"
+  }
+]

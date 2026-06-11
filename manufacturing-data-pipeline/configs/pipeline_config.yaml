@@ -1,0 +1,55 @@
+# Pipeline configuration
+# All paths are relative to repo root unless prefixed with /
+
+sources:
+  order_db:
+    type: postgres
+    host: "${ORDER_DB_HOST}"
+    port: 5432
+    database: matterize_orders
+    schema: public
+    tables:
+      - orders
+      - order_line_items
+      - invoices
+    timeout_seconds: 30
+
+  cad_geometry_store:
+    type: rest_api
+    base_url: "${CAD_STORE_URL}"
+    auth_header: "Authorization"
+    auth_value: "Bearer ${CAD_STORE_API_KEY}"
+    endpoint: "/api/v1/geometry-features/{part_id}"
+    timeout_seconds: 10
+
+  material_price_feed:
+    type: rest_api
+    base_url: "${PRICE_FEED_URL}"
+    auth_header: "Authorization"
+    auth_value: "Bearer ${PRICE_FEED_API_KEY}"
+    endpoint: "/v2/prices"
+    timeout_seconds: 5
+
+  equipment_log:
+    type: csv_dump
+    path: "data/raw/equipment_log_{date}.csv"
+    refresh: weekly
+
+output:
+  base_dir: "data/processed"
+  filename_pattern: "training_data_v{version}.csv"
+  metadata_pattern: "training_data_v{version}_meta.json"
+
+pipeline:
+  schema_version: "v2"
+  min_samples_per_class: 20
+  test_split_fraction: 0.15
+  val_split_fraction: 0.15
+  random_seed: 42
+  log_level: INFO
+  log_dir: "logs/pipeline_runs"
+
+schedule:
+  # Full run: daily at 06:00 UTC
+  cron: "0 6 * * *"
+  timezone: UTC

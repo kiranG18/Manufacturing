@@ -1,0 +1,13 @@
+part_id,description,bounding_box_x,bounding_box_y,bounding_box_z,volume,surface_area,wall_thickness_min,wall_thickness_avg,aspect_ratio,hole_count,hole_diameter_min,undercut_flag,thin_wall_flag,curvature_complexity,symmetry_score,expected_process
+REF-001,"Aluminium bracket, 3 holes",85,60,20,54200,22800,3.2,4.1,4.25,3,5.0,0,0,0.08,0.32,cnc_milling
+REF-002,Stainless shaft 180mm,180,22,22,61070,14800,6.0,7.2,8.18,0,,0,0,0.04,0.91,cnc_turning
+REF-003,Sheet metal enclosure panel,320,200,2.5,82500,137300,1.2,1.2,128.0,8,4.0,0,1,0.02,0.21,sheet_metal_bending
+REF-004,ABS injection moulded housing,95,70,35,58300,38200,2.0,2.5,2.71,4,2.5,0,0,0.22,0.44,injection_molding
+REF-005,Titanium turbine blade (SLM),110,45,38,31200,28900,0.9,2.1,2.89,2,1.8,1,1,0.78,0.19,additive_slm
+REF-006,Aluminium die cast gearbox cover,185,140,55,289000,98600,2.8,4.2,3.36,6,6.0,0,0,0.31,0.48,die_casting
+REF-007,"5-axis impeller, high curvature",120,120,80,412000,74200,3.5,5.0,1.5,1,18.0,1,0,0.82,0.61,5axis_cnc
+REF-008,Extruded aluminium profile 600mm,600,40,30,328000,84200,4.0,4.0,20.0,0,,0,0,0.05,0.72,extrusion
+REF-009,PLA desktop print bracket,60,40,35,19800,17600,1.2,1.6,1.71,4,3.0,0,1,0.55,0.28,additive_fdm
+REF-010,Steel forged connecting rod,220,55,28,198000,62800,8.0,12.0,7.86,2,22.0,0,0,0.18,0.62,forging
+REF-011,"Copper sheet, punched holes laser",480,280,1.5,108000,272300,0.8,0.8,320.0,42,3.0,0,1,0.01,0.35,laser_cutting
+REF-012,Investment cast stainless valve body,95,80,75,182000,51200,3.0,5.5,1.27,4,8.0,1,0,0.62,0.38,investment_casting

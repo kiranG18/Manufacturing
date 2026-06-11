@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+*.egg-info/
+
+# Don't commit model artifacts — they're large and rebuilt from training
+models/
+
+.DS_Store
+Thumbs.db

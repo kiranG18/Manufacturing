@@ -1,0 +1,31 @@
+process_code,display_name,category,wall_min_mm,wall_max_mm,hole_dia_min_mm,hole_dia_max_mm,min_quantity,geometry_constraint,notes
+cnc_milling,CNC Milling,subtractive,0.5,3000,0.5,3000,1.0,any,"General-purpose 3-axis milling on aluminium, steel, plastics"
+cnc_turning,CNC Turning,subtractive,1.0,2000,1.0,500,1.0,round,Rotational parts; bar stock; shafts and bushings
+sheet_metal_bending,Sheet Metal Bending,forming,0.5,4.0,0.5,4.0,any,Brake press bending; sheet and plate stock
+sheet_metal_stamping,Sheet Metal Stamping,forming,0.5,4.0,0.5,4.0,any,High-volume punching and forming from coil stock
+injection_molding,Injection Molding,forming,1.0,4.0,1.0,4.0,>=10000,Thermoplastics; high-volume consumer/industrial parts
+die_casting,Die Casting,casting,1.5,6.0,1.5,6.0,>=1000,"Aluminium, zinc, magnesium alloys; high-pressure casting"
+sand_casting,Sand Casting,casting,3.0,any,3.0,any,any,Low-cost tooling; large or low-volume castings
+investment_casting,Investment Casting,casting,0.5,10.0,0.5,10.0,any,High accuracy; complex shapes; aerospace alloys
+additive_fdm,Additive FDM,additive,0.4,3.0,0.4,3.0,any,Polymer prototyping; low-stress functional parts
+additive_slm,Additive SLM,additive,0.2,2.0,0.2,2.0,any,Metal powder bed fusion; complex internal geometry
+laser_cutting,Laser Cutting,subtractive,0.5,25.0,0.5,25.0,any,Flat sheet profiling; any flat material
+forging,Forging,forming,5.0,any,5.0,any,any,"High-strength structural parts; steel, aluminium"
+extrusion,Extrusion,forming,1.0,any,1.0,any,any,"Uniform cross-section profiles; aluminium, plastics"
+5axis_cnc,5-Axis CNC,subtractive,0.5,1500,0.5,1500,1.0,any,Complex freeform geometry; aerospace; mould tools
+turning_milling,CNC Turning + Milling,subtractive,1.0,1000,1.0,500,1.0,round+features,"Mill-turn centres; shafts with keyways, flats, holes"
+edm,EDM,subtractive,0.1,any,0.1,any,any,Hardened materials; complex cavities; high precision
+vacuum_forming,Vacuum Forming,forming,0.5,4.0,0.5,4.0,>=100,Thin-sheet thermoplastics; packaging and enclosures
+powder_coating,Powder Coating,finishing,any,any,any,any,any,Surface finishing; applied after primary process
+waterjet_cutting,Waterjet Cutting,subtractive,any,any,any,any,any,"No heat; ceramics, composites, thick sheet"
+electroplating,Electroplating,finishing,any,any,any,any,any,Decorative or functional surface treatment
+anodizing,Anodizing,finishing,any,any,any,any,any,Aluminium only; corrosion and wear resistance
+grinding,Grinding,subtractive,any,any,any,any,any,Tight tolerance finishing after primary machining
+broaching,Broaching,subtractive,1.0,any,1.0,any,any,"Keyways, splines; high-volume production"
+deep_draw,Deep Draw,forming,0.5,3.0,0.5,3.0,>=500,"Cups, cans, enclosures from sheet metal"
+roll_forming,Roll Forming,forming,0.5,4.0,0.5,4.0,>=1000,Long profiles from coil; structural sections
+hipping,HIP,post-process,any,any,any,any,any,Eliminates porosity in castings and additive parts
+heat_treatment,Heat Treatment,post-process,any,any,any,any,any,"Hardening, tempering, annealing"
+thread_rolling,Thread Rolling,forming,0.5,any,0.5,any,any,Cold-formed threads; stronger than cut threads
+hobbing,Hobbing,subtractive,any,any,any,any,any,Gear tooth generation; high-volume gears
+burnishing,Burnishing,finishing,any,any,any,any,any,Cold-working surface for improved fatigue life

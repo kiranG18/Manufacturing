@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+.env
+
+# Model artifacts (large binary files)
+outputs/model_v2.pkl
+outputs/model_v1.pkl
+
+# Raw data (proprietary)
+data/raw/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

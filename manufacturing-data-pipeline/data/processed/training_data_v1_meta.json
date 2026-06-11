@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "saved_at": "2026-06-11T09:30:04.825837Z",
+  "row_count": 100,
+  "column_count": 41,
+  "columns": [
+    "order_id",
+    "part_id",
+    "process_code",
+    "material_code",
+    "quantity",
+    "batch_size",
+    "surface_finish_ra",
+    "tolerance_band",
+    "order_date",
+    "completion_date",
+    "facility_id",
+    "cost_total",
+    "cost_machine_time",
+    "cost_setup",
+    "cost_tooling",
+    "cost_raw_material",
+    "cost_finishing",
+    "cost_label_source",
+    "bounding_box_x",
+    "bounding_box_y",
+    "bounding_box_z",
+    "volume",
+    "surface_area",
+    "wall_thickness_min",
+    "wall_thickness_avg",
+    "aspect_ratio",
+    "hole_count",
+    "hole_diameter_min",
+    "undercut_flag",
+    "thin_wall_flag",
+    "curvature_complexity",
+    "symmetry_score",
+    "material_price_per_kg",
+    "effective_hourly_rate",
+    "wall_thickness_min_imputed",
+    "wall_thickness_avg_imputed",
+    "process_code_encoded",
+    "material_code_encoded",
+    "log_quantity",
+    "volume_x_price",
+    "tolerance_index"
+  ],
+  "pipeline_run_stats": {
+    "validation": {
+      "total_rows_pre_validation": 100,
+      "total_rows_post_validation": 100,
+      "dropped_rows_count": 0,
+      "dropped_reasons_summary": {},
+      "pass_rate_pct": 100.0
+    },
+    "coverage": {
+      "process_coverage": {
+        "injection_molding": 29,
+        "additive_slm": 22,
+        "cnc_milling": 19,
+        "sheet_metal_bending": 18,
+        "cnc_turning": 12
+      },
+      "material_coverage": {
+        "AL6061": 22,
+        "TI6AL4V": 19,
+        "SS316L": 16,
+        "PEEK": 16,
+        "ABS": 14,
+        "MS_A36": 13
+      }
+    },
+    "drift": {
+      "note": "No baseline dataset found"
+    },
+    "warnings": [
+      "WARNING: process_code 'injection_molding' has 29 rows. Below recommended size of 100.",
+      "WARNING: process_code 'additive_slm' has 22 rows. Below recommended size of 100.",
+      "CRITICAL: process_code 'cnc_milling' has only 19 rows. Below absolute minimum threshold of 20.",
+      "CRITICAL: process_code 'sheet_metal_bending' has only 18 rows. Below absolute minimum threshold of 20.",
+      "CRITICAL: process_code 'cnc_turning' has only 12 rows. Below absolute minimum threshold of 20."
+    ],
+    "drift_detected": false,
+    "coverage_passed": false
+  }
+}

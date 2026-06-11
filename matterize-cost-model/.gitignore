@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+.env
+
+# Serialized model artifacts
+outputs/models/*.pkl
+
+# Raw order data (contains PII and proprietary pricing)
+data/raw/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+.DS_Store
+Thumbs.db

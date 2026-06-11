@@ -1,0 +1,40 @@
+# Process routing configuration.
+# Maps incoming process codes to their trained model files.
+
+routing:
+  cnc_milling:
+    model_file: "cnc_milling_v2.pkl"
+    description: "CNC Milling model (3-axis and 5-axis)"
+    confidence_thresholds:
+      high: 80
+      medium: 25
+  cnc_turning:
+    model_file: "cnc_turning_v2.pkl"
+    description: "CNC Lathe / Turning model"
+    confidence_thresholds:
+      high: 80
+      medium: 25
+  sheet_metal_bending:
+    model_file: "sheet_metal_bending_v2.pkl"
+    description: "Sheet metal brake bending model"
+    confidence_thresholds:
+      high: 80
+      medium: 25
+  injection_molding:
+    model_file: "injection_molding_v2.pkl"
+    description: "Plastic injection molding model"
+    confidence_thresholds:
+      high: 80
+      medium: 25
+  additive_slm:
+    model_file: "additive_slm_v2.pkl"
+    description: "Selective Laser Melting (Metal 3D printing)"
+    confidence_thresholds:
+      high: 80
+      medium: 25
+  sand_casting:
+    model_file: "sand_casting_v2.pkl"
+    description: "Sand casting process model"
+    confidence_thresholds:
+      high: 80
+      medium: 25

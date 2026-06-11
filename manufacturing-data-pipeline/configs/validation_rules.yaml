@@ -1,0 +1,185 @@
+# Validation rules for the training dataset schema.
+# Applied by schema_validator.py before any dataset version is written.
+# null_policy options: "required", "drop_row", "flag_and_impute", "fallback_to_historical_avg", "default_value"
+
+columns:
+  part_id:
+    type: string
+    null_policy: required
+
+  # Geometry features
+  bounding_box_x:
+    type: float
+    range: [0.5, 3000.0]
+    unit: mm
+    null_policy: required
+
+  bounding_box_y:
+    type: float
+    range: [0.5, 3000.0]
+    unit: mm
+    null_policy: required
+
+  bounding_box_z:
+    type: float
+    range: [0.5, 1000.0]
+    unit: mm
+    null_policy: required
+
+  volume:
+    type: float
+    range: [1.0, 1.0e9]
+    unit: mm3
+    null_policy: required
+
+  surface_area:
+    type: float
+    range: [1.0, 5.0e7]
+    unit: mm2
+    null_policy: required
+
+  wall_thickness_min:
+    type: float
+    range: [0.1, 500.0]
+    unit: mm
+    null_policy: flag_and_impute
+    impute_strategy: process_class_median
+    note: >
+      Null occurs for ~5% of STL uploads where ray-casting fails.
+      Imputed with process-class median from training split.
+
+  wall_thickness_avg:
+    type: float
+    range: [0.5, 500.0]
+    unit: mm
+    null_policy: flag_and_impute
+    impute_strategy: process_class_median
+
+  aspect_ratio:
+    type: float
+    range: [1.0, 50.0]
+    null_policy: required
+    note: Derived from bounding_box dimensions; should never be null.
+
+  hole_count:
+    type: int
+    range: [0, 200]
+    null_policy: default_value
+    default: 0
+
+  hole_diameter_min:
+    type: float
+    range: [0.5, 100.0]
+    unit: mm
+    null_policy: flag_and_impute
+    impute_strategy: column_mean
+    note: Null is valid when hole_count == 0. Model handles NaN explicitly.
+
+  undercut_flag:
+    type: int
+    allowed_values: [0, 1]
+    null_policy: default_value
+    default: 0
+
+  thin_wall_flag:
+    type: int
+    allowed_values: [0, 1]
+    null_policy: required
+    note: Derived from wall_thickness_min; required after imputation.
+
+  curvature_complexity:
+    type: float
+    range: [0.0, 1.0]
+    null_policy: default_value
+    default: 0.0
+    note: 0.0 for STL files without face annotation.
+
+  symmetry_score:
+    type: float
+    range: [0.0, 1.0]
+    null_policy: default_value
+    default: 0.5
+
+  # Process and order context
+  process_code:
+    type: string
+    allowed_values:
+      - cnc_milling
+      - cnc_turning
+      - sheet_metal_bending
+      - sheet_metal_stamping
+      - injection_molding
+      - die_casting
+      - sand_casting
+      - investment_casting
+      - additive_fdm
+      - additive_slm
+      - laser_cutting
+      - forging
+      - extrusion
+      - 5axis_cnc
+      - turning_milling
+      - edm
+      - vacuum_forming
+      - powder_coating
+    null_policy: drop_row
+
+  material_code:
+    type: string
+    null_policy: required
+
+  quantity:
+    type: int
+    range: [1, 1000000]
+    null_policy: required
+
+  # Material pricing
+  material_price_per_kg:
+    type: float
+    range: [0.50, 500.0]
+    unit: USD/kg
+    null_policy: fallback_to_historical_avg
+    staleness_threshold_days: 7
+
+  # Cost labels
+  cost_machine_time:
+    type: float
+    range: [0.01, 100000.0]
+    unit: USD
+    null_policy: drop_row
+
+  cost_setup:
+    type: float
+    range: [0.0, 50000.0]
+    unit: USD
+    null_policy: drop_row
+
+  cost_tooling:
+    type: float
+    range: [0.0, 500000.0]
+    unit: USD
+    null_policy: drop_row
+
+  cost_raw_material:
+    type: float
+    range: [0.01, 100000.0]
+    unit: USD
+    null_policy: drop_row
+
+  cost_finishing:
+    type: float
+    range: [0.0, 50000.0]
+    unit: USD
+    null_policy: drop_row
+
+  cost_total:
+    type: float
+    range: [0.01, 500000.0]
+    unit: USD
+    null_policy: drop_row
+
+  cost_label_source:
+    type: string
+    allowed_values: ["exact", "decomposed", "estimated"]
+    null_policy: default_value
+    default: "estimated"

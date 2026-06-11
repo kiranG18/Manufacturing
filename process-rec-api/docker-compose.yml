@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - CLASSIFIER_MODEL_PATH=/workspace/app/models/classifier_v2.pkl
+      - COST_MODELS_DIR=/workspace/app/models/cost_v2/
+      - LOG_LEVEL=INFO
+      - MODEL_VERSION_TAG=classifier_v2_cost_v2
+    volumes:
+      - ./app:/workspace/app
+    restart: always

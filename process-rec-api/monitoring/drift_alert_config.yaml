@@ -1,0 +1,36 @@
+# monitoring/drift_alert_config.yaml
+groups:
+  - name: process-rec-api-alerts
+    rules:
+      # Alert on high latency (P95 latency exceeding target threshold)
+      - alert: HighInferenceLatency
+        expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{path="/v1/recommend"}[5m])) by (le)) * 1000 > 150
+        for: 5m
+        labels:
+          severity: warning
+          service: process-rec-api
+        annotations:
+          summary: "High P95 inference latency detected"
+          description: "Inference response time is {{ $value }}ms, which is above the target SLA threshold of 150ms."
+
+      # Alert on internal errors (5xx HTTP responses)
+      - alert: HighErrorRate
+        expr: sum(rate(http_requests_total{status=~"5.."}[5m])) / sum(rate(http_requests_total[5m])) * 100 > 1.0
+        for: 2m
+        labels:
+          severity: critical
+          service: process-rec-api
+        annotations:
+          summary: "API HTTP 5xx Error Rate > 1%"
+          description: "Process Recommendation service is returning internal errors for {{ $value }}% of requests over the past 2 minutes."
+
+      # Alert on dataset distribution drift logged by the ETL pipeline
+      - alert: ModelDistributionDrift
+        expr: pipeline_data_drift_metric{status="drifted"} == 1
+        for: 1h
+        labels:
+          severity: warning
+          service: pipeline-validator
+        annotations:
+          summary: "Feature distribution drift detected"
+          description: "The ETL pipeline has flagged distribution drift in incoming orders compared to baseline data. Check drift_metrics logs."

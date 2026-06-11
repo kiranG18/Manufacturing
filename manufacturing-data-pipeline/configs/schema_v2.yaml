@@ -1,0 +1,40 @@
+# Canonical schema and categories definition for training datasets
+
+processes:
+  cnc_milling: 1
+  cnc_turning: 2
+  sheet_metal_bending: 3
+  sheet_metal_stamping: 4
+  injection_molding: 5
+  die_casting: 6
+  sand_casting: 7
+  investment_casting: 8
+  additive_fdm: 9
+  additive_slm: 10
+  laser_cutting: 11
+  forging: 12
+  extrusion: 13
+  5axis_cnc: 14
+  turning_milling: 15
+  edm: 16
+  vacuum_forming: 17
+  powder_coating: 18
+
+materials:
+  AL6061: 1
+  AL7075: 1
+  AL2024: 1
+  SS304: 2
+  SS316L: 2
+  SS17-4: 2
+  MS_A36: 3
+  MS_1018: 3
+  TI6AL4V: 4
+  PEEK: 5
+  POM: 5
+  PA66: 5
+  ABS: 6
+  PLA: 6
+  PETG: 6
+  INCONEL625: 7
+  CARBON_FIBER: 8
