@@ -68,7 +68,9 @@ Error analysis shows you went beyond training a model — you understood where a
 
 **Explaination:**  
 The two biggest failure categories were CNC Milling vs Turning confusion and Stamping vs Bending confusion. In both cases, the issue was a missing feature rather than a model problem: the model couldn't separate these process pairs because we weren't giving it the right signal. For Turning/Milling, adding symmetry_score in v2 fixed most of it. For Stamping/Bending, the fix would require extracting bend feature count from the CAD file, which is a v3 item.
+
 ---
+
 
 ### `matterize-cost-model/reports/per_process_accuracy.md`
 
