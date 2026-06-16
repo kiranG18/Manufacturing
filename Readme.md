@@ -1,6 +1,3 @@
-# Interview Defense Guide — Matterize AI/ML Internship
-**For:** Aris  
-**Use:** Active preparation before interviews. Not a script — a skeleton.  
 
 ---
 
