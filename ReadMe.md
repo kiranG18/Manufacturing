@@ -1,8 +1,6 @@
 
 ---
 
-## The one-sentence version
-
 I built the ML layer that takes a 3D CAD part and outputs which manufacturing processes are viable and what each one will cost, feeding directly into Matterize's products for R&D and procurement teams.
 
 ---
