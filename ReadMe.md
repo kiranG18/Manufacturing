@@ -7,16 +7,16 @@ I built the ML layer that takes a 3D CAD part and outputs which manufacturing pr
 
 ## Repository map
 
-| Repo | What it proves | Strongest resume bullet it supports |
+| Repo | What it proves | Supports |
 |---|---|---|
-| `cad-process-recommender` | You can build a real classifier, engineer domain features, and evaluate rigorously | "Developed classification models mapping CAD geometry features to manufacturing processes across 50+ types" |
-| `matterize-cost-model` | You understand structured regression, model architecture decisions, and business impact | "Built regression models for stepwise cost decomposition, reducing estimation error by [X%]" |
-| `manufacturing-data-pipeline` | You think about data quality, reproducibility, and production realism | "Integrated live raw material price feeds and built ETL pipelines for model training infrastructure" |
-| `process-rec-api` | You can take a model to production, not just a notebook | "Containerized models as REST microservices consumed by Quanta and Optima, achieving <31ms P95 latency" |
+| `cad-process-recommender` | You can build a real classifier, engineer domain features, and evaluate rigorously | Developed classification models mapping CAD geometry features to manufacturing processes across 50+ types |
+| `matterize-cost-model` | You understand structured regression, model architecture decisions, and business impact | Built regression models for stepwise cost decomposition, reducing estimation error by [9%] |
+| `manufacturing-data-pipeline` | You think about data quality, reproducibility, and production realism | Integrated live raw material price feeds and built ETL pipelines for model training infrastructure |
+| `process-rec-api` | You can take a model to production, not just a notebook | Containerized models as REST microservices consumed by Quanta and Optima, achieving <31ms P95 latency |
 
 ---
 
-## Artifact-by-artifact defense
+## Artifact-by-artifact
 
 ---
 
